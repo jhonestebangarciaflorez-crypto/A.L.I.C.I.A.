@@ -1,0 +1,291 @@
+/* --- RESET & GENERAL --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.login-container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+/* --- PANEL IZQUIERDO (AZUL) --- */
+.left-panel {
+  width: 50%;
+  background-color: #6366f1;
+  color: #ffffff;
+  padding: 48px 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* Patrón de cuadrícula de puntos */
+  background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Brand / Logo */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 0.5px;
+}
+
+.brand-icon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+/* Tarjetas de características (Features) */
+.features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: auto;
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  backdrop-filter: blur(8px);
+}
+
+.feature-icon {
+  background: rgba(255, 255, 255, 0.2);
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.feature-icon i {
+  width: 20px;
+  height: 20px;
+  color: #ffffff;
+}
+
+.feature-text h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.feature-text p {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+
+/* --- PANEL DERECHO (FORMULARIO BLANCO) --- */
+.right-panel {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
+  background-color: #ffffff;
+}
+
+.form-wrapper {
+  width: 100%;
+  max-width: 400px;
+}
+
+.form-wrapper h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 6px;
+}
+
+.form-subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-bottom: 24px;
+}
+
+/* Inputs y Labels */
+.input-group {
+  margin-bottom: 18px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #475569;
+  margin-bottom: 6px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.input-field {
+  display: flex;
+  align-items: center;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 0 14px;
+  transition: all 0.2s ease;
+}
+
+.input-field:focus-within {
+  border-color: #6366f1;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.input-field i {
+  color: #94a3b8;
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+}
+
+.input-field input {
+  width: 100%;
+  padding: 12px 0;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 0.88rem;
+  color: #1e293b;
+}
+
+.input-field input::placeholder {
+  color: #94a3b8;
+}
+
+/* Fila doble de Contraseñas */
+.input-row {
+  display: flex;
+  gap: 12px;
+}
+
+.input-row .input-group {
+  flex: 1;
+}
+
+/* Checkbox Ley 1581 */
+.terms-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 4px;
+  margin-bottom: 24px;
+}
+
+.terms-group input[type="checkbox"] {
+  margin-top: 2px;
+  accent-color: #6366f1;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.terms-group label {
+  font-size: 0.8rem;
+  color: #64748b;
+  line-height: 1.4;
+}
+
+.terms-group a {
+  color: #6366f1;
+  text-decoration: underline;
+}
+
+/* Botón Crear Cuenta */
+.btn-submit {
+  width: 100%;
+  padding: 14px;
+  background-color: #818cf8;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-submit:hover {
+  background-color: #6366f1;
+}
+
+/* Enlaces Inferiores */
+.form-footer {
+  margin-top: 24px;
+  text-align: center;
+  font-size: 0.88rem;
+  color: #64748b;
+}
+
+.form-footer a {
+  color: #6366f1;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.form-footer a:hover {
+  text-decoration: underline;
+}
+
+
+.back-link {
+    display: inline-block;
+    color: #94a3b8 !important;
+    font-weight: 400 !important;
+    font-size: 0.85rem;
+}
+
+/* Posicionamiento del icono para mostrar/ocultar contraseña */
+.input-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Estilos para el botón contenedor del icono */
+.btn-toggle-password {
+  position: absolute;
+  right: 10px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7280; /* Color gris suave */
+  transition: color 0.2s ease;
+}
+
+.btn-toggle-password:hover {
+  color: #1e3a8a; /* Cambia a azul al pasar el cursor */
+}
+
+/* Previene que el texto ingresado tape el icono */
+.input-field input {
+  padding-right: 40px;
+}
+

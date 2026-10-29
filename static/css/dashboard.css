@@ -1,0 +1,49 @@
+.dashboard-container {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    font-family: Arial, sans-serif;
+}
+
+.header-dashboard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.btn-logout {
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.welcome-card {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 5px solid #2ecc71;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

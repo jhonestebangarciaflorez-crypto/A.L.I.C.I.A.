@@ -1,0 +1,183 @@
+/* Estilos generales */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    color: #1f2937;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Cabecera del Logo (ALICIA) */
+.brand-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+
+
+.brand-title {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #111827;
+}
+
+.brand-subtitle {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+/* Tarjeta Principal */
+.login-container {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 460px;
+}
+
+/* Contenedor del Icono Centrado */
+.lock-icon-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.lock-box {
+    background-color: #eef2ff;
+    color: #6366f1;
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lock-box svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Títulos y textos */
+.login-container h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 8px;
+}
+
+.login-container > p {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 24px;
+    line-height: 1.5;
+}
+
+/* Etiquetas e Inputs */
+.input-label {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    color: #374151;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.input-group svg {
+    position: absolute;
+    left: 14px;
+    color: #9ca3af;
+    width: 20px;
+    height: 20px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 14px 12px 46px;
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #1f2937;
+    transition: all 0.2s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #6366f1;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.input-group input::placeholder {
+    color: #9ca3af;
+}
+
+/* Botón de envío */
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    background: linear-gradient(135deg, #6366f1, #4f46e5);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s ease, transform 0.1s ease;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
+}
+
+.btn-submit:hover {
+    opacity: 0.95;
+    transform: translateY(-1px);
+}
+
+.btn-submit:active {
+    transform: translateY(0);
+}
+
+/* Enlace de retorno */
+.back-link-container {
+    text-align: center;
+    margin-top: 24px;
+}
+
+.back-link-container a {
+    font-size: 14px;
+    color: #4b5563;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.back-link-container a:hover {
+    color: #6366f1;
+    text-decoration: underline;
+}
+
+

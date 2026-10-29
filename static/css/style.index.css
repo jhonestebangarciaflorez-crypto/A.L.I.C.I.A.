@@ -1,0 +1,485 @@
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ffffff;
+    color: #1a1d20;
+    line-height: 1.5;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 2rem;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e9ecef;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+
+
+/* Control del Logo */
+.logo img {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+/* Menú de Navegación (Consolidado) */
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    padding-left: 0;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333333;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav-menu a:hover {
+    color: #5d5fef;
+}
+
+/* Botones de Acción */
+.buttons-action {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.btn-primario, .btn-segundario {
+    text-decoration: none;
+    padding: 0.4rem 1rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-block;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-primario {
+    background-color: #5d5fef;
+    color: #ffffff;
+    border: 1.5px solid #5d5fef;
+}
+
+.btn-primario:hover {
+    background-color: #4b4ddb;
+    border-color: #4b4ddb;
+}
+
+.btn-segundario {
+    background-color: transparent;
+    color: #5d5fef;
+    border: 1.5px solid #5d5fef;
+}
+
+.btn-segundario:hover {
+    background-color: #f0f0ff;
+}
+
+
+/* Contenedor que agrupa el Logo y el Nombre */
+.logo-container {
+    display: flex;
+    align-items: center; /* Alinea el texto y la imagen verticalmente */
+    gap: 0.75rem;        /* Espacio entre la imagen del logo y el texto ALICIA */
+}
+
+
+/* Nombre de la marca al lado del logo */
+.brand-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1a1d20;      /* Ajusta al color que requieras */
+    letter-spacing: 0.5px;
+}
+
+
+.hero-section {
+    text-align: center;
+    padding: 5rem 2rem;
+    max-width: 800px;
+    margin: 0 auto; /* Centra el contenido horizontalmente */
+}
+
+/* Título Principal */
+.hero-section h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #1a1d20;
+    line-height: 1.25;
+    margin-bottom: 1.5rem;
+}
+
+/* Texto resaltado (Java, HTML/CSS y SQL) */
+.resaltado {
+    color: #5d5fef; /* El morado distintivo de tu proyecto */
+}
+
+/* Parrafo descriptivo */
+.hero-section p {
+    font-size: 1.1rem;
+    color: #555555;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Contenedor de Botones */
+.hero-butons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Estilos de los botones del Hero */
+.btn-primario-hero, 
+.btn-segundario-hero {
+    text-decoration: none;
+    padding: 0.75rem 1.8rem; /* Un poco más de presencia que los del header */
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    display: inline-block;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+/* Botón Primario ("Explorar Catálogo Gratis") */
+.btn-primario-hero {
+    background-color: #5d5fef;
+    color: #ffffff;
+    border: 1.5px solid #5d5fef;
+}
+
+.btn-primario-hero:hover {
+    background-color: #4b4ddb;
+    border-color: #4b4ddb;
+}
+
+/* Botón Secundario ("Iniciar sesión") */
+.btn-segundario-hero {
+    background-color: transparent;
+    color: #5d5fef;
+    border: 1.5px solid #5d5fef;
+}
+
+.btn-segundario-hero:hover {
+    background-color: #f0f0ff;
+}
+
+/* Adaptación para pantallas móviles */
+@media (max-width: 600px) {
+    .hero-section {
+        padding: 3rem 1rem;
+    }
+
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .hero-butons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-primario-hero, 
+    .btn-segundario-hero {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* ==========================================
+   SECCIÓN CATÁLOGO (Ajustado al prototipo)
+   ========================================== */
+
+.catalogo {
+    padding: 3rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #f8f9fa; /* Fondo gris claro suave como la imagen */
+    border-radius: 16px;
+}
+
+/* Encabezado ALINEADO A LA IZQUIERDA */
+.header-catalogo {
+    text-align: left; /* Alineado a la izquierda */
+    margin-bottom: 1.25rem;
+}
+
+.header-catalogo h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 0.25rem;
+}
+
+.header-catalogo p {
+    color: #64748b;
+    font-size: 0.95rem;
+}
+
+/* Filtros ALINEADOS A LA IZQUIERDA */
+.catalog-filters {
+    display: flex;
+    justify-content: flex-start; /* Alineados a la izquierda */
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    color: #475569;
+    padding: 0.4rem 1rem; /* Botones un poco más compactos */
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+    border-color: #5d5fef;
+    color: #5d5fef;
+}
+
+.filter-btn.active {
+    background-color: #5d5fef;
+    color: #ffffff;
+    border-color: #5d5fef;
+}
+
+/* Rejilla de Tarjetas */
+.cards-red {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); /* Reducimos el ancho mínimo de las tarjetas */
+    gap: 1.25rem; /* Espaciado más ajustado entre tarjetas */
+}
+
+/* Tarjeta más compacta */
+.card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.1rem; /* Reducido de 1.5rem a 1.1rem para achicar la tarjeta */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.04);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+/* Ícono en contenedor circular (como en el prototipo) */
+.card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background-color: #eef2ff;
+    color: #5d5fef;
+    border-radius: 50%;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+/* Badges / Etiquetas de Nivel */
+.etiqueta-nivel {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+}
+
+.etiqueta-nivel.principiante {
+    background-color: #fef3c7; /* Color amarillento suave como la captura del prototipo */
+    color: #d97706;
+}
+
+.etiqueta-nivel.intermedio {
+    background-color: #e0e7ff;
+    color: #4f46e5;
+}
+
+.etiqueta-nivel.avanzado {
+    background-color: #d1fae5;
+    color: #059669;
+}
+
+/* Textos internos de la tarjeta */
+.card h3 {
+    font-size: 1rem; /* Tipografía más pequeña para la tarjeta compacta */
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 0.2rem;
+}
+
+.tech-tag {
+    display: block;
+    font-size: 0.8rem;
+    color: #94a3b8; /* Gris suave debajo del título */
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+}
+
+.card p {
+    font-size: 0.825rem;
+    color: #64748b;
+    line-height: 1.4;
+    margin-bottom: 1.25rem;
+}
+
+.card-link {
+    text-decoration: none;
+    color: #5d5fef;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.card-link:hover {
+    text-decoration: underline;
+}
+
+
+/* Reinicio básico para asegurar que el footer esté en su lugar */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* El contenido principal de tu página debe tener 'flex: 1' para empujar el footer */
+main, .page-content {
+  flex: 1;
+}
+
+footer {
+  width: 100%;
+  background-color: #ffffff; /* Fondo blanco */
+  padding: 1rem 2rem; /* Espaciado interno */
+  margin-top: auto; /* Mantiene el footer abajo */
+}
+
+/* Contenedor central para alinear ambos lados */
+.footer-container {
+  max-width: 1200px; /* Ancho máximo opcional para contener el contenido */
+  margin: 0 auto; /* Centrar el contenedor */
+  display: flex;
+  justify-content: space-between; /* Lado izquierdo y derecho separados */
+  align-items: center; /* Alineación vertical central */
+}
+
+/* Lado Izquierdo */
+.footer-left {
+  display: flex;
+  align-items: center; /* Icono y texto alineados horizontalmente */
+  gap: 1rem; /* Espacio entre icono y texto */
+}
+
+/* Estilos para el icono (cuadrado azul) */
+.alicia-icon {
+  width: 32px; /* Ancho del cuadrado */
+  height: 32px; /* Altura del cuadrado */
+  background-color: #d5d3da; /* Color de fondo violeta/azul (ajusta a tu gusto exacto) */
+  border-radius: 6px; /* Bordes redondeados */
+  display: flex;
+  justify-content: center; /* Centrado horizontal del icono interior */
+  align-items: center; /* Centrado vertical del icono interior */
+  overflow: hidden; /* Para que el icono/imagen no se salga */
+}
+
+.alicia-icon img, 
+.alicia-icon svg {
+  max-width: 50px; /* Asegura que el icono de la chispa no se vea muy grande */
+  max-height: 50px;
+  color: #ffffff; /* Color del icono de la chispa si es SVG */
+}
+
+/* Estilos para el texto de identificación */
+.footer-text {
+  color: #1e293b; /* Color de texto oscuro, profesional */
+  font-size: 0.95rem;
+  font-weight: 500; /* Ligeramente grueso, como en la imagen */
+}
+
+/* Lado Derecho: Enlaces Legales */
+.navegacion-legal ul {
+  list-style: none; /* Quitar puntos de lista */
+  display: flex;
+  gap: 1.5rem; /* Espacio entre enlaces */
+  margin: 0;
+  padding: 0;
+}
+
+.navegacion-legal a {
+  color: #64748b; /* Color de texto gris claro para los enlaces */
+  text-decoration: none; /* Sin subrayado */
+  font-size: 0.875rem; /* Tamaño de fuente ligeramente más pequeño */
+  font-weight: 400;
+  transition: color 0.2s ease;
+}
+
+.navegacion-legal a:hover {
+  color: #1e293b; /* Color más oscuro al pasar el ratón */
+}
+
+/* Adaptación para pantallas móviles (opcional pero recomendado) */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  
+  .footer-left {
+    justify-content: center;
+  }
+  
+  .navegacion-legal ul {
+    justify-content: center;
+    flex-wrap: wrap; /* Para que no se corte en móviles muy pequeños */
+  }
+}
+
+
+
+
+
+
+
+
+
+

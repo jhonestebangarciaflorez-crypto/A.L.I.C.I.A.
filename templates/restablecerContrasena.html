@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALICIA - Restablecer Contraseña</title>
+    <link rel="icon" type="image/png" href="/static/img/logoHD.png">
+    <link rel="stylesheet" href="/static/css/restablecerContrasena.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <!-- Cabecera del Logotipo (ALICIA) -->
+    <div class="brand-header">
+        <div class="brand-logo-box">
+            <img src="/static/img/logoHD.png" width="44px">
+        </div>
+        <span class="brand-title">ALICIA</span>
+    </div>
+
+    <!-- Tarjeta Principal de Restablecimiento -->
+    <div class="login-container">
+        <!-- Candado centrado -->
+        <div class="lock-icon-container">
+            <div class="lock-box">
+                <i data-lucide="shield-check"></i>
+            </div>
+        </div>
+
+        <h2>Nueva Contraseña</h2>
+        <p>Ingresa el código de verificación que recibiste y tu nueva contraseña.</p>
+        
+        <form id="form-restablecer">
+            <label class="input-label" for="token_o_codigo">CÓDIGO DE VERIFICACIÓN</label>
+            <div class="input-group">
+                <i data-lucide="key"></i>
+                <input type="text" id="token_o_codigo" name="token_o_codigo" placeholder="Código de 6 dígitos o Token" required>
+            </div>
+
+            <label class="input-label" for="nueva_contrasena">NUEVA CONTRASEÑA</label>
+            <div class="input-group">
+                <i data-lucide="lock"></i>
+                <input type="password" id="nueva_contrasena" name="nueva_contrasena" placeholder="Nueva contraseña" required>
+            </div>
+
+            <button type="submit" class="btn-submit">Restablecer Contraseña</button>
+        </form>
+
+        <div id="mensaje-respuesta" style="margin-top: 15px;"></div>
+
+        <div class="back-link-container">
+            <a href="/login">← Volver al Inicio de Sesión</a>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        document.getElementById('form-restablecer').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const token_o_codigo = document.getElementById('token_o_codigo').value;
+            const nueva_contrasena = document.getElementById('nueva_contrasena').value;
+            const mensajeDiv = document.getElementById('mensaje-respuesta');
+
+            try {
+                const response = await fetch('/auth/restablecer-contrasena', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ token_o_codigo, nueva_contrasena })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    mensajeDiv.style.color = 'green';
+                    mensajeDiv.textContent = data.mensaje + ' Redirigiendo al login...';
+                    setTimeout(() => {
+                        window.location.href = '/login'; // O tu ruta de inicio de sesión
+                    }, 2000);
+                } else {
+                    mensajeDiv.style.color = 'red';
+                    mensajeDiv.textContent = data.detail || 'Ocurrió un error.';
+                }
+            } catch (error) {
+                mensajeDiv.style.color = 'red';
+                mensajeDiv.textContent = 'Error de conexión con el servidor.';
+            }
+        });
+    </script>
+</body>
+</html>
+
+

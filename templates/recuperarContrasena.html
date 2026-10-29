@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALICIA - Recuperar Contraseña</title>
+    <link rel="icon" type="image/png" href="../static/img/logoHD.png">
+    <link rel="stylesheet" href="/static/css/recuperarContrasena.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+
+    <div class="brand-header">
+        <div class="brand-logo-box">
+            <i data-lucide="sparkles"></i>
+        </div>
+        <span class="brand-title">ALICIA</span>
+    </div>
+
+    <!-- Tarjeta Principal de Recuperación -->
+    <div class="login-container">
+        <!-- Candado centrado -->
+        <div class="lock-icon-container">
+            <div class="lock-box">
+                <i data-lucide="lock"></i>
+            </div>
+        </div>
+
+        <h2>Recuperar Contraseña</h2>
+        <p>Ingresa tu correo electrónico registrado y te enviaremos un código de verificación.</p>
+        
+        <form id="form-recuperar">
+            <label class="input-label" for="correo">Correo Electrónico</label>
+            <div class="input-group">
+                <i data-lucide="mail"></i>
+                <input type="email" id="correo" name="correo" placeholder="correo@ejemplo.com" required>
+            </div>
+            <button type="submit" class="btn-submit">Enviar Código</button>
+        </form>
+
+        <div id="mensaje-respuesta" style="margin-top: 15px;"></div>
+        
+        <div class="back-link-container">
+            <a href="/auth/login">← Volver al Inicio de Sesión</a>
+        </div>
+    </div>
+    <script>
+        lucide.createIcons();
+
+        document.getElementById('form-recuperar').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const correo = document.getElementById('correo').value;
+            const mensajeDiv = document.getElementById('mensaje-respuesta');
+
+            try {
+                const response = await fetch('/auth/solicitar-recuperacion', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ correo })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    mensajeDiv.style.color = 'green';
+                    mensajeDiv.innerHTML = `${data.mensaje}<br><small>(Código de prueba: <b>${data.codigo_verificacion_mock}</b>)</small><br><small>Redirigiendo...</small>`;
+                    
+                    // 🚀 ESTO ES LO QUE HACE EL SALTO AUTOMÁTICO
+                    setTimeout(() => {
+                        window.location.href = '/restablecer';
+                    }, 10000); // Espera 3 segundos para que puedas leer el código y luego salta solo
+
+                } else {
+                    mensajeDiv.style.color = 'red';
+                    mensajeDiv.textContent = data.detail || 'Ocurrió un error.';
+                }
+            } catch (error) {
+                mensajeDiv.style.color = 'red';
+                mensajeDiv.textContent = 'Error de conexión con el servidor.';
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+

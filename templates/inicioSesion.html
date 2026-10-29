@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - ALICIA</title>
+    <link rel="icon" type="image/png" href="../static/img/logoHD.png">
+    <link rel="stylesheet" href="../static/css/style.login.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <div class="login-container">
+
+    <section class="left-panel">
+        <div class="brand">
+        <img src="../static/img/LogoHD.png" alt="Logo ALICIA" class="brand-icon">
+        <span>ALICIA</span>
+        </div>
+
+        <div class="quote-container">
+        <h2>"El error no es el final.<br>Es el inicio del aprendizaje real."</h2>
+        <p class="subtitle">Plataforma educativa</p>
+        </div>
+
+        <div class="tech-badges">
+        <span class="badge"><i data-lucide="code-2"></i> Java</span>
+        <span class="badge"><i data-lucide="globe"></i> HTML/CSS</span>
+        <span class="badge"><i data-lucide="database"></i> SQL</span>
+        </div>
+    </section>
+
+    <!-- Lado Derecho (Formulario Blanco) -->
+    <section class="right-panel">
+        <div class="form-wrapper">
+        <h2>Bienvenido/a de nuevo</h2>
+        <p class="form-subtitle">Ingresa con tu correo</p>
+
+        <form id="formLogin" onsubmit="return iniciarSesion(event);">
+            
+            <div class="input-group">
+            <label for="email">CORREO</label>
+            <div class="input-field">
+                <i data-lucide="mail"></i>
+                <input type="email" id="email" placeholder="maria.garcia@sena.edu.co" required>
+            </div>
+            </div>
+
+            <div class="input-group">
+            <label for="password">CONTRASEÑA</label>
+            <div class="input-field">
+                <i data-lucide="lock"></i>
+                <input type="password" id="password" placeholder="********" required>
+            </div>
+            </div>
+
+            <div class="forgot-pass">
+            <a href="/recuperar">¿Olvidaste tu contraseña?</a>
+            </div>
+
+            <button type="submit" class="btn-submit">Iniciar sesión</button>
+
+        </form>
+
+        <div class="form-footer">
+            <p>¿No tienes cuenta? <a href="/registro">Regístrate</a></p>
+            <a href="/" class="back-link">- Volver al inicio</a>
+        </div>
+        </div>
+    </section>
+
+    </div>
+
+
+    <script>
+    lucide.createIcons();
+    </script>
+    <script src="../static/js/login.js"></script>
+</body>
+</html>
+
+
